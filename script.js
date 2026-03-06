@@ -1,31 +1,24 @@
 const pageFlip = new St.PageFlip(
 document.getElementById("book"),
 {
-width:400,
-height:500,
+width:450,
+height:520,
+
 size:"stretch",
-minWidth:300,
-maxWidth:800,
-minHeight:400,
-maxHeight:600,
+
+minWidth:320,
+maxWidth:900,
+
+minHeight:420,
+maxHeight:650,
+
 showCover:true,
-mobileScrollSupport:true
+
+mobileScrollSupport:true,
+useMouseEvents:true
 }
 );
 
 pageFlip.loadFromHTML(
 document.querySelectorAll(".page")
 );
-
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-btn.onclick = ()=>{
-if(music.paused){
-music.play();
-btn.innerText="⏸ Pause Music";
-}else{
-music.pause();
-btn.innerText="🎵 Play Music";
-}
-};
