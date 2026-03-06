@@ -41,6 +41,6 @@ padding-right:80px;
 
 /* HALAMAN KANAN (geser ke kanan supaya tidak ketutup lipatan) */
 .page:nth-child(even){
-padding-left:80px;
+padding-left:10px;
 margin-left:20px;
 }
