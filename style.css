@@ -1,8 +1,8 @@
+/* HALAMAN UMUM */
 .page{
 background:white;
 border-radius:10px;
 padding:30px;
-
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
 display:flex;
@@ -14,14 +14,11 @@ height:100%;
 }
 
 /* FOTO */
-
 .page img{
 max-width:100%;
 max-height:220px;
-
 width:auto;
 height:auto;
-
 object-fit:contain;
 
 border-radius:10px;
@@ -29,24 +26,21 @@ margin-bottom:15px;
 }
 
 /* TEKS */
-
 .page p{
 font-size:14px;
 line-height:1.7;
-
-padding:0 20px;
-
 text-align:center;
 
-word-wrap:break-word;
+max-width:85%;
 }
 
-/* JARAK TENGAH BUKU */
-
+/* HALAMAN KIRI (geser sedikit ke kiri) */
 .page:nth-child(odd){
-padding-right:60px;
+padding-right:80px;
 }
 
+/* HALAMAN KANAN (geser ke kanan supaya tidak ketutup lipatan) */
 .page:nth-child(even){
-padding-left:60px;
+padding-left:80px;
+margin-left:20px;
 }
