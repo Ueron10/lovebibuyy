@@ -112,36 +112,3 @@ padding-right:25px;
 }
 
 }
-.cover {
-  background: linear-gradient(135deg, #ff7a18, #ffb347);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-}
-
-.cover-content{
-  padding: 20px;
-}
-
-.cover-photo{
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-bottom: 15px;
-}
-
-.cover h2{
-  font-size: 22px;
-  color: white;
-  margin-bottom: 8px;
-}
-
-.cover p{
-  font-size: 14px;
-  color: white;
-  opacity: 0.9;
-}
