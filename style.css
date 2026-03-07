@@ -1,25 +1,46 @@
-/* BACKGROUND HALAMAN */
+/* =========================
+   BACKGROUND
+========================= */
 body{
 margin:0;
 padding:0;
-font-family: 'Poppins', sans-serif;
+font-family:'Poppins',sans-serif;
 
-background: linear-gradient(135deg,#ff9ec4,#a18cd1);
+background:linear-gradient(135deg,#ff9ec4,#a18cd1);
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 min-height:100vh;
 }
 
-/* CONTAINER BUKU */
+
+/* =========================
+   CONTAINER BUKU
+========================= */
 #book{
 box-shadow:0 20px 40px rgba(0,0,0,0.3);
 border-radius:15px;
+overflow:hidden;
 }
 
-/* HALAMAN */
+
+/* =========================
+   HALAMAN
+========================= */
 .page{
-background:white;
+
+background:#fffaf5;
+
+/* motif scrapbook */
+background-image:
+radial-gradient(#ffd6e0 1px, transparent 1px),
+radial-gradient(#ffd6e0 1px, transparent 1px);
+
+background-size:20px 20px;
+background-position:0 0,10px 10px;
+
 border-radius:12px;
 
 padding:25px;
@@ -27,78 +48,210 @@ padding:25px;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
+justify-content:flex-start;
 
 text-align:center;
 
 height:100%;
+
+position:relative;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* FOTO */
-.page img{
+
+/* =========================
+   FOTO
+========================= */
+.page img:not(.sticker){
+
 width:80%;
-max-width:250px;
+max-width:240px;
 
 border-radius:12px;
 
 margin-bottom:15px;
 
 box-shadow:0 10px 20px rgba(0,0,0,0.15);
+
+object-fit:cover;
+
+position:relative;
+z-index:2;
+
 }
 
-/* TEKS */
+
+/* =========================
+   TEKS
+========================= */
 .page p{
+
 font-size:15px;
 line-height:1.6;
 
 max-width:90%;
+
 color:#444;
+
+position:relative;
+z-index:2;
+
 }
 
-/* HALAMAN KIRI */
+
+/* =========================
+   HALAMAN KIRI / KANAN
+========================= */
 .page:nth-child(odd){
-padding-right:60px;
+padding-right:50px;
 }
 
-/* HALAMAN KANAN */
 .page:nth-child(even){
-padding-left:60px;
+padding-left:50px;
 }
 
-/* COVER */
+
+/* =========================
+   STIKER
+========================= */
+.sticker{
+
+position:absolute;
+
+width:26px;
+height:auto;
+
+opacity:0.9;
+
+pointer-events:none;
+
+background:none;
+
+transform:rotate(-10deg);
+
+z-index:1;
+
+/* animasi kecil */
+animation: pulse 2s infinite ease-in-out;
+
+}
+
+
+/* efek sedikit hidup */
+
+.page:hover .sticker{
+transform:rotate(-10deg) scale(1.15);
+}
+
+@keyframes pulse {
+  0% { transform: rotate(-10deg) scale(1); }
+  50% { transform: rotate(-10deg) scale(1.2); }
+  100% { transform: rotate(-10deg) scale(1); }
+}
+
+.sticker:nth-child(1){ animation-duration:2s; }
+.sticker:nth-child(2){ animation-duration:2.5s; }
+.sticker:nth-child(3){ animation-duration:1.8s; }
+
+@keyframes pulse {
+  0% { transform: rotate(-10deg) scale(1); }
+  25% { transform: rotate(-12deg) scale(1.1); }
+  50% { transform: rotate(-10deg) scale(1.2); }
+  75% { transform: rotate(-8deg) scale(1.1); }
+  100% { transform: rotate(-10deg) scale(1); }
+}
+/* =========================
+   POSISI STIKER (PINGGIR)
+========================= */
+
+.top-left{
+top:8px;
+left:8px;
+}
+
+.top-right{
+top:8px;
+right:8px;
+}
+
+.bottom-left{
+bottom:8px;
+left:8px;
+}
+
+.bottom-right{
+bottom:8px;
+right:8px;
+}
+
+
+/* =========================
+   COVER DEPAN
+========================= */
 .cover{
+
 background:linear-gradient(135deg,#ff7eb3,#ff758c);
+
 color:white;
 
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
+
 text-align:center;
+
+padding:30px;
+
 }
 
-/* COVER BELAKANG */
-.cover-back{
-background:linear-gradient(135deg,#a18cd1,#6a85b6);
+.cover p{
 color:white;
+font-size:14px;
+margin-top:10px;
+}
+
+
+/* =========================
+   COVER BELAKANG
+========================= */
+.cover-back{
+
+background:linear-gradient(135deg,#a18cd1,#6a85b6);
+
+color:white;
+
 font-size:18px;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 text-align:center;
+
+padding:30px;
+
 }
 
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width:600px){
 
 .page{
-padding:20px;
+padding:18px;
 }
 
-.page img{
+.page img:not(.sticker){
+
 width:90%;
 max-width:200px;
+
 }
 
 .page p{
@@ -107,8 +260,14 @@ font-size:14px;
 
 .page:nth-child(odd),
 .page:nth-child(even){
+
 padding-left:25px;
 padding-right:25px;
+
+}
+
+.sticker{
+width:20px;
 }
 
 }
