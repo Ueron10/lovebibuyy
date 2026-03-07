@@ -238,36 +238,29 @@ padding:30px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width:600px){
-
-.page{
-padding:18px;
+.phone-frame{
+  width:360px;          /* lebar HP */
+  max-width:95vw;
+  height:640px;         /* tinggi HP */
+  max-height:95vh;
+  border:16px solid #222;
+  border-radius:36px;
+  background:#111;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  position:relative;
 }
 
-.page img:not(.sticker){
-
-width:90%;
-max-width:200px;
-
-}
-
-.page p{
-font-size:14px;
-}
-
-.page:nth-child(odd),
-.page:nth-child(even){
-
-padding-left:25px;
-padding-right:25px;
-
-}
-
-.sticker{
-width:20px;
-}
-
+/* notch / speaker HP */
+.phone-frame::before{
+  content:"";
+  width:60px;
+  height:5px;
+  background:#333;
+  border-radius:5px;
+  position:absolute;
+  top:10px;
 }
